@@ -28,7 +28,7 @@ public class TimeZoneProducerTest {
         String zoneId = "";
         String cityName = "Dnipro";
         TimeZoneProducer instance = new TimeZoneProducer();
-        TimeZone expResult = null;
+        TimeZone expResult = TimeZone.getTimeZone("UTC");
         TimeZone result = instance.getTimeZone(zoneId, cityName);
         assertEquals(expResult, result);
     }
@@ -46,7 +46,7 @@ public class TimeZoneProducerTest {
     public void testGetTimeZoneByCityNameFail() {
         String name = "Dnipro";
         TimeZoneProducer instance = new TimeZoneProducer();
-        TimeZone expResult = null;
+        TimeZone expResult = TimeZone.getTimeZone("UTC");
         TimeZone result = instance.getTimeZoneByCityName(name);
         assertEquals(expResult, result);
     }

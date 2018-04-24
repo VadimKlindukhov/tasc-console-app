@@ -57,12 +57,12 @@ public class TimeZoneProducer {
      * @return time zone object or null if zone not found
      */
     public TimeZone getTimeZoneByCityName(String name) {
-        String arg = name.trim().replaceAll("//s", "_");
+        String arg = name.trim().replaceAll("\\s", "_");
         for(String zoneId : zoneIds) {
             if(zoneId.endsWith("/" + arg)) {
                 return TimeZone.getTimeZone(zoneId);
             }
         }
-        return null;
+        return TimeZone.getTimeZone("UTC");
     }
 }
